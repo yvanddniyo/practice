@@ -9,6 +9,12 @@
 => The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match hug, huh, hut, and hum, you can use the regex /hu./ to match all four words.
 => Character classes: allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
 => character sets to specify a group of characters to match.
+=> you can use the also number and alphabet to match at given string.
+=> Negated character sets: create a set of characters that you do not want to match [^].
+=> lazy match which finds the smallest possible part of the string that satisfies the regex pattern.( /t[a-z]*?/)
+=> The closest character class in JavaScript to match the alphabet is \w. This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (_).
+
+
 */
 
 let testStr = "coding is not weaker";
@@ -20,26 +26,60 @@ let testAnimal = /Dog|Cat|fish/i // this the value will this look into the strin
 let resultAnimal = testAnimal.test(selectFav)
 
 let extractStr = "Extract the word 'coding' from this string.";
-let codingRegex = /Coding/i; // Change this line
+let codingRegex = /Coding/i; 
 let resultStr = extractStr.match(codingRegex);
 
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /twinkle/ig; // applied  ignore and global for ignore cases and match globally.
-let resultTwinkle = twinkleStar.match(starRegex); // Change this line
+let resultTwinkle = twinkleStar.match(starRegex); 
 // [ 'Twinkle', 'twinkle' ]
 
 let exampleStr = "Let's have fun with regular expressions!"; // looking for words that end with (un) within in the string
-let unRegex = /.un/; // Change this line
+let unRegex = /.un/; 
 let resultDot = unRegex.test(exampleStr);// wildcard character 
-console.log(resultDot); 
+
 
 let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let vowelRegex = /[aeiou]/g;
 let resultClass = quoteSample.match(vowelRegex);
 
 let quoteSamples = "The quick brown fox jumps over the lazy dog.";
-let alphabetRegex = /[a-z]/ig; // Change this line
+let alphabetRegex = /[a-z]/ig; 
 let resultAlphabet = quoteSamples.match(alphabetRegex); // this give the alphabet in the string provided above.
 
-console.log(resultAlphabet); // 
+let quoteSampless = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/ig; // Change this line
+let resultNumberAndAlphas = quoteSample.match(myRegex); 
+
+let quoteSampleNegate = "3 blind mice.";
+let myRegexNegate = /[^aeiuoe0-9]/ig; // This line of code will return everything within the string but exclude the vowels and numbers.
+let negateResult = quoteSampleNegate.match(myRegexNegate); // can also used to check the first word in the string 
+
+
+
+let difficultSpelling = "Mississippi";
+let myRegexRepeated = /s+/ig; // you can add [+] to find out repeated letter within the string and return it
+let resultRepeated  = difficultSpelling.match(myRegexRepeated);
+
+let text = "<h1>Winter is coming</h1>";
+let myRegexLazy = /<.1[a-z]*?>/; // Change this line
+let resultLazy = text.match(myRegexLazy); // let reCriminals = /C+[a-z]*?/ this line return C in any string.
+
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;  // $ used to search the word at the end of string.
+storyRegex.test(theEnding);
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);  
+
+
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+longHand.test(numbers);
+shortHand.test(numbers);
+longHand.test(varNames);
+shortHand.test(varNames);
+
+console.log(resultLazy);  
 
