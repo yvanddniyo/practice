@@ -25,7 +25,15 @@ const getTodos = (resource) => {
 
 getTodos("todos/dexter.json")
   .then((data) => {
-    console.log("promise resolved:", data);
+    // console.log("promise 1  resolved:", data);
+    // return getTodos("todos/lebron.json");
+  })
+  .then((data) => {
+    // console.log("promise 2 resolved:", data);
+    // return getTodos("todos/ibrah.json");
+  })
+  .then((data) => {
+    // console.log("promise 3 resolved:", data);
   })
   .catch((err) => {
     console.log("promise rejected:", err);
@@ -73,3 +81,29 @@ getSomeThing((data) => {
 }).catch((err) => {
   console.log(err);
 });
+
+fetch("todos/dexter.json")
+  .then((response) => {
+    // console.log("resolved", response);
+    return response.json();
+  })
+  .then((data) => {
+    // console.log(data);
+  })
+  .catch((err) => {
+    // console.log("rejected", err);
+  });
+
+const getTodoss = async () => {
+  const response = await fetch("todos/lebro.json"); // this await used to prevent javascript to assign until the fetch get an items
+  if (response.status !== 200) {
+    throw new Error("cannot fetch the data");
+  }
+  const data = await response.json();
+  return data;
+};
+getTodoss()
+  .then((data) => {
+    console.log("resolved:", data);
+  })
+  .catch((err) => console.log("rejected:", err.message));
