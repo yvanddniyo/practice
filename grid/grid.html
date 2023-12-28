@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <style>
+    .title{
+      text-align: center;
+    }
+    .calendar{
+      background-color: rgb(58, 51, 51);
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      width: 250px;
+      border: 1px solid black;
+      margin: 0 auto;
+      padding: 4px;
+      border-radius: 6px;
+    }
+    .child {
+      width: 18px;
+      height: 18px;
+      background-color: gray;
+      margin: 3px;
+      padding: 3px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      border-radius: 18px;
+    }
+
+    .container { 
+      width: 250px;
+      height: 300px;
+      display: grid;
+      grid-template-columns: 2fr 4fr;
+      grid-template-rows: 60px 2fr;
+      gap: 12px;
+      grid-template-areas: 
+      "aside header"
+      "aside main";
+      margin: 18px auto;
+      border-radius: 6px;
+      background-color: white;
+      box-shadow: rgb(00, 39, 39) 0px 0px 9px 8px;
+    }
+
+    #sidebar {
+     grid-area: aside;
+    background-color: rgb(117, 93, 61);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+   #header {
+    grid-area: header;
+    background-color: antiquewhite;
+    text-align: center; justify-content: center;
+    display: flex;
+    align-items: center;
+   }
+   #main{
+    grid-area: main;
+    background-color: rgb(143, 136, 127);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+   } 
+    
+    
+  </style>
+</head>
+<body>
+  <h4 class="title">Calendar</h4>
+  <div class="calendar">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+    <div class="child">7</div>
+    <div class="child">8</div>
+    <div class="child">9</div>
+    <div class="child">10</div>
+    <div class="child">11</div>
+    <div class="child">12</div>
+    <div class="child">13</div>
+    <div class="child">14</div>
+    <div class="child">15</div>
+    <div class="child">16</div>
+    <div class="child">17</div>
+    <div class="child">18</div>
+    <div class="child">19</div>
+    <div class="child">20</div>
+    <div class="child">21</div>
+    <div class="child">22</div>
+    <div class="child">23</div>
+    <div class="child">24</div>
+    <div class="child">25</div>
+    <div class="child">26</div>
+    <div class="child">27</div>
+    <div class="child">28</div>
+    <div class="child">29</div>
+    <div class="child">30</div>
+    <div class="child">31</div>
+  </div>
+  <div class="container">
+    <aside id="sidebar">sidebar</aside>
+    <header id="header">Header</header>
+     <main id="main">Main</main>
+     
+  </div>
+</body>
+</html>
