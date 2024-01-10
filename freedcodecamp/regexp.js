@@ -83,3 +83,26 @@ shortHand.test(varNames);
 
 console.log(resultLazy);  
 
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i; // Change this line
+let resultUsername = userCheck.test(username);
+
+
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6}\sno/; // Change this line
+let resultOhStr = ohRegex.test(ohStr);
+console.log(result)
+
+// [A-Za-z0-9_] === /w
+
+let shortHand_= /\W/;
+let numbers_ = "42%";
+let sentence = "Coding!";
+numbers.match(shortHand);
+sentence.match(shortHand);
+// Recall that you use the plus sign + to look for one or more characters and the asterisk * to look for zero or more characters./
+ 
+// /\d/ used to look digit character in string.
+// /\D/ used to look non digit in a certain string.
+// /\s/g return whitespace btn characters.
+// /\S/g return non-whitespace within string.
