@@ -101,8 +101,44 @@ let sentence = "Coding!";
 numbers.match(shortHand);
 sentence.match(shortHand);
 // Recall that you use the plus sign + to look for one or more characters and the asterisk * to look for zero or more characters./
+
+
+let sampleWord = "astronaut";
+let pwRegex =  /(?=\w{6})(?=\w*\d{2})/;
+let resultH = pwRegex.test(sampleWord); // Check password of more than five character long
+
+let myString  = "Eleanor Roosevelt";
+let myRegexes = /(Franklin|Eleanor) (([A-Z]\.?|[A-Z][a-z]+) )?Roosevelt/; // Change this line
+let resultMy = myRegex.test(myString); // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
+
+
+let repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+// Using the .match() 
+// method on a string will return an array with the matched substring, along with its captured groups.
+
+
+let testString = "test test test";
+let reRegex = /(test)\s\1/;
+let resultT = reRegex.test(testString);
+// Check repeated number with a given value.
+
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let resultStrs = str.replace(fixRegex, replaceText);
+// is used to search and replace
  
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // Change this line
+let resultHe = hello.replace(wsRegex, ""); // Change this line
+// used to remove whitespace without using trim 
+
 // /\d/ used to look digit character in string.
 // /\D/ used to look non digit in a certain string.
 // /\s/g return whitespace btn characters.
 // /\S/g return non-whitespace within string.
+// /(\w+)/ used to check repeated words in the string
