@@ -147,3 +147,122 @@ Array.prototype.myFilter = function(callback) {
   }
   return newArray;
 };
+
+// Function that filter out big array of movies and return the value of rating that a certain director had directed
+function getRating(watchList) {
+  // Only change code below this line
+  let averageRating;
+   let getDirector = watchList.filter(direct => direct.Director === "Christopher Nolan")
+ const mapOver = getDirector.map(rating => rating.imdbRating)
+  const changes = mapOver.map(num => Number(num))
+ let lengthOfRate = changes.length;
+ let getRating = changes.reduce((a, b) => (a + b),0)
+ averageRating = getRating/lengthOfRate
+
+  return averageRating;
+}
+console.log(getRating(watchList)); 
+
+// Filter and map over
+const squareList = arr => {
+  // Only change code below this line
+  return arr
+  .filter(num => num > 0 && Number.isInteger(num))
+  .map(num => Math.pow(num, 2))
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+
+// use sort for sorting the alphabet
+function alphabeticalOrder(arr) {
+  return arr.sort((a,b) => 
+  a === b ? 0 : a >b? 1: -1)
+}
+
+console.log(alphabeticalOrder(["a", "d", "c", "a", "z", "g"]))
+
+// URL slug
+function urlSlug(title) {
+  let breaks = 
+  title.toLowerCase()
+  .trim()
+  .split(/\s+/)
+  .join('-')
+  
+return breaks
+}
+
+// curried 
+
+function add(x) {
+ return function(y) {
+   return function(z) {
+     return x + y + z
+   }
+ }
+}
+
+add(10)(20)(30);
+
+//We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.  For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+
+function sumAll(arr) {
+  const summs = arr.reduce((a ,b) => a+b, 0)
+  let arr1 = arr[0]
+  let arr2 = arr[1]
+  let result = [];
+  if ( arr1 < arr2){ 
+    for ( let i = arr1 +1; i <= arr2 -1; i++){
+    result.push(i) 
+   }}
+   else {
+      for ( let i = arr1 -1; i >= arr2 +1; i--){
+    result.push(i) 
+   }
+   }
+   const answer = result.reduce((c, d) => c+d, 0)
+  return summs + answer; 
+}
+
+sumAll([10, 5]);
+
+// finding different in two Array
+function diffArray(arr1, arr2) {
+  return arr1
+    .concat(arr2)
+    .filter(item => !arr1.includes(item) || !arr2.includes(item));
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+// altenative 
+function diffArray(arr1, arr2) {
+  const diff1 = arr2.filter(item => !arr1.includes(item));
+  const diff2 = arr1.filter(item => !arr2.includes(item));
+  const newArr = [...diff1, ...diff2];
+ return newArr;
+}
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+// Pig Latin
+function translatePigLatin(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+ if (vowels.includes(str[0])) {
+   return str + 'way';
+ } else {
+   let consonantCluster = '';
+   let index = 0;
+
+   while (index < str.length && !vowels.includes(str[index])) {
+     consonantCluster += str[index];
+     index++;
+   }
+
+   return str.slice(index) + consonantCluster + 'ay';
+ }
+}
+translatePigLatin("consonant");
