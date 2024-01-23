@@ -144,3 +144,142 @@ return primes.reduce((sum, prime) => sum + prime, 0);
 }
 
 sumPrimes(10);
+
+//this code of a certain 
+function steamrollArray(arr) {
+  return arr.toString().replace(',,', ',').split(',')
+     .map(sol => { 
+     if (sol == '[object Object]'){
+       return {}
+     }
+     else if (isNaN(sol)) {
+       return sol
+     }
+     else {
+       return parseInt(sol)
+     }
+    })
+  }
+  
+  steamrollArray([1, [2], [3, [[4]]]]);
+
+  // change word from binary to the text 
+
+  const changeFromBin = (str) => {
+    const sp = str.split(' ')
+    const arr = []
+    for(let i = 0; i < sp.length; i++) {
+      arr.push(String.fromCharCode(parseInt(sp[i], 2)))
+    }
+    return join('');
+  }
+
+// FreeCodeCamp 
+function addTogether() {
+  const [f, s] = arguments
+
+  if (typeof (f) === 'number') {
+    if (typeof (s)=== 'number') return f + s;
+  if (arguments.length === 1) return (s) => addTogether(f,s)
+  }
+}
+// Contructor 
+const Person = function(first, last) {
+  let firstName = first;
+  let lastName  = last;
+
+  this.getFirstName = function() {
+    return firstName;
+  };
+
+  this.getLastName = function() {
+    return lastName;
+  };
+
+  this.getFullName = function() {
+    return this.getFirstName() + " " + this.getLastName();
+  };
+
+  this.setFirstName = function(first) {
+    return firstName = first;
+  };
+
+  this.setLastName = function(last) {
+    return lastName = last;
+  };
+
+  this.setFullName = function(first, last) {
+    this.setFirstName(first);
+    this.setLastName(last);
+    return this.getFullName();
+  };
+};
+//Fill in the object constructor with the following methods below:
+// getFirstName()
+// getLastName()
+// getFullName()
+// setFirstName(first)
+// setLastName(last)
+// setFullName(first, last)
+// Run the tests to see the expected output for each method. These methods must be the only available means of interacting with the object. Each test will declare a new Person instance as new Person('Bob', 'Ross').
+
+
+
+//Map the Debris
+// According to Kepler's Third Law, the orbital period  T
+// of two point masses orbiting each other in a circular or elliptic orbit is:
+
+// T=2πa3μ−−−√
+
+// a
+// is the orbit's semi-major axis
+// μ=GM
+// is the standard gravitational parameter
+// G
+// is the gravitational constant,
+// M
+// is the mass of the more massive body.
+// Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
+
+// The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
+
+// The values should be rounded to the nearest whole number. The body being orbited is Earth.
+
+// The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-
+
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  const a = 2 * Math.PI;
+  const newArr = [];
+
+  const getOrbPeriod = function(obj) {
+    const c = Math.pow(earthRadius + obj.avgAlt, 3);
+    const b = Math.sqrt(c / GM);
+    const orbPeriod = Math.round(a * b);
+    // create new object
+    return {name: obj.name, orbitalPeriod: orbPeriod};
+}
+      for (let elem in arr) {
+    newArr.push(getOrbPeriod(arr[elem]));
+  }
+    return newArr;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+
+// Another solution
+function orbitalPeriod(arr) {
+  var GM = 398600.4418
+  var earthRadius = 6367.4447
+  
+  for (let i in arr) {
+    var orbitsLengthPower3 = Math.pow((arr[i].avgAlt + earthRadius), 3)
+    var rightHand = Math.pow((orbitsLengthPower3 / GM), 0.5)
+    var orbitalPer = Math.round(2 * Math.PI * rightHand)
+    arr[i] = {name: arr[i].name, orbitalPeriod: orbitalPer}
+  }
+  return arr;
+}
+
+orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])
