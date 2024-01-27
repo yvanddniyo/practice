@@ -34,4 +34,14 @@ function summation (arr) {
   }
   return result;
 }
-console.log(summation([1,2,3]))
+// console.log(summation([1,2,3]))
+
+const countdown = (number)=> {
+ if (number === 0) {
+  return;
+ } else {
+  console.log(number);
+  countdown(number-1)
+ }
+}
+console.log(countdown(3))
