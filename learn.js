@@ -47,3 +47,4 @@ function removeFirstAndLastCharacters(inputString) {
 const originalString = "HelloWorld";
 const modifiedString = removeFirstAndLastCharacters(originalString);
 console.log(modifiedString); // Output: elloWorl
+

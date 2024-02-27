@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Blog</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#blog-section {
+    margin-bottom: 20px;
+}
+
+#editor-container {
+    margin-top: 20px;
+}
+
+#blog-editor {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+</style>
+<body>
+    <div id="blog-section"></div>
+
+    <!-- Include a rich text editor for creating new blogs -->
+    <div id="editor-container">
+        <textarea id="blog-editor" placeholder="Write your blog..."></textarea>
+        <button onclick="addBlog()">Add Blog</button>
+    </div>
+
+    <script>
+        // Sample hardcoded blogs
+const blogs = [
+    { content: "This is the first blog.", likes: 5, comments: ["Nice!", "Great post."] },
+    { content: "Another blog post here.", likes: 8, comments: ["Interesting read."] }
+];
+
+// Function to render blogs dynamically
+function renderBlogs() {
+    const blogSection = document.getElementById("blog-section");
+    blogSection.innerHTML = ""; // Clear previous content
+
+    blogs.forEach(blog => {
+        const blogDiv = document.createElement("div");
+        blogDiv.classList.add("blog-item");
+
+        // Display blog content, likes, and comments
+        blogDiv.innerHTML = `
+            <p>${blog.content}</p>
+            <p>Likes: ${blog.likes}</p>
+            <ul>
+                ${blog.comments.map(comment => `<li>${comment}</li>`).join('')}
+            </ul>
+        `;
+
+        blogSection.appendChild(blogDiv);
+    });
+}
+
+// Function to add a new blog
+function addBlog() {
+    const blogContent = document.getElementById("blog-editor").value;
+
+    if (blogContent.trim() !== "") {
+        // Assuming you have a way to track likes and comments for new blogs
+        const newBlog = { content: blogContent, likes: 0, comments: [] };
+        blogs.push(newBlog);
+
+        // Clear the editor after adding the blog
+        document.getElementById("blog-editor").value = "";
+
+        // Update the blog section
+        renderBlogs();
+    }
+}
+
+// Initial rendering of blogs
+renderBlogs();
+
+    </script>
+</body>
+</html>
