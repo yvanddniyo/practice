@@ -1,21 +1,29 @@
 //1. Prime Numbers 
 
-const primeEachNum = (n) => {
-    if (n <=1) {
-        return false
-    }
-    if ( n % 2 === 0) {
-        return n
-    }
+
+const getPrimeNum =(num) =>{
+	if (num < 2) {
+		return false
+	}
+	for (let i = 2; i <= Math.sqrt(num); i++) {
+		if (num % i === 0) {
+			return false
+		}
+	}
+	return true
 }
 
-const primeNum = (arrs) => {
-    for (let i = 1; i < arrs.length; i++) {
-        console.log(arrs[i])
-    }
-    
+const arraysPrime = (arr) => {
+	let result = []
+	for (let i = 0; i < arr.length; i++) {
+		if (getPrimeNum(arr[i])) {
+			result.push(arr[i])
+		}
+	} 
+	return result;
 }
-console.log(primeNum([1,2,3,4,5,6,7,8,9]))
+const arr = [1,2,3,4,5,7,8,9]
+console.log(arraysPrime(arrray));
 
 
 // 2.   => Palindrome
@@ -25,7 +33,7 @@ const palindrome =(str) => {
 }
 console.log(palindrome('ye'))
 
-// 2.SECOND CHALLENGES  => ARRAY REVERSING
+// 3.SECOND CHALLENGES  => ARRAY REVERSING
 
 const reverseArray = (arr) => {
   let newArr = [];
@@ -37,7 +45,7 @@ const reverseArray = (arr) => {
 }
 console.log(reverseArray([1,2,3,4,5,6]));
 
-// 3. THIRD CHALLANGES => 
+// 4. THIRD CHALLENGES => 
 
 const reverseInplaceArray = (arr2) => {
     let arr1 = []
@@ -47,3 +55,26 @@ const reverseInplaceArray = (arr2) => {
   return newArr
 
 }
+
+// 5. FIVE CHALLENGES
+
+const formatArrays = (arr) => {
+  const objectOrganized = {
+    male: [],
+    female: [] 
+  }
+  const destructingArray = arr.forEach( person => {
+    
+  })
+
+}
+// [“Patrick wyne, 30, male”, “lil wyne, 32, male”,“Eric mimi, 21, female”,“Dodos deck, 21,male”,“Alian Dwine, 22, male”,“Patrick wyne, 33, male”,“Patrick wyne, 10,male0”,“Patrick wyne, 40,male”]
+
+// {
+//   females: [Eric: {'second-name':mimi, age:21}], 
+// males: [' patrick': {'second-name':wyne, age:30},lil: {second-name:wyne, age:30}]
+// }
+
+
+// solution
+

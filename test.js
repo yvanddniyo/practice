@@ -62,35 +62,44 @@ function convert(arr, length){
   }
   return arr;
 }
-function add(arr1, arr2){
-  if(arr1.length > arr2.length){
-    arr2 = convert(arr2, arr1.length);
-  }
-  else if(arr1.length < arr2.length){
-    arr1=convert(arr1, arr2.length);
-  }
-  var sum = [];
-  var transfer=0;
-  for(let i = 0; i < arr1.length; i++){
-    if((arr1[i] + arr2[i]) + transfer < 10){
-      sum[i] = arr1[i] + arr2[i] + transfer;
-      transfer = 0;
-    }
-    else{
-      sum[i] = (arr1[i] + arr2[i] + transfer) % 10;
-      transfer = 1;
-    }
-  }
-  if(transfer){
-    sum.push(transfer);
-  }
-  return sum;
+
+
+
+function organizePeopleData(peopleArray) {
+  const organizedData = {
+      females: [],
+      males: []
+  };
+
+  peopleArray.forEach(person => {
+      const [fullName, age, gender] = person.split(',').map(item => item.trim());
+      const [firstName, secondName] = fullName.split(' ');
+
+      const personInfo = {
+          'second-name': secondName,
+          'age': parseInt(age)
+      };
+
+      if (gender.toLowerCase() === 'female') {
+          organizedData.females.push({ [firstName]: personInfo });
+      } else if (gender.toLowerCase() === 'male') {
+          organizedData.males.push({ [firstName]: personInfo });
+      }
+  }); 
+
+  return organizedData;
 }
-function translateToString(arr){
-  var str = "";
-  for (let i = arr.length-1; i>=0; i--){
-  str = str + arr[i];
-  }
-return str;
-}
-translateToString(fibonacci(80));
+
+const formattedArray = [
+  "Patrick wyne, 30, male",
+  "lil wyne, 32, male",
+  "Eric mimi, 21, female",
+  "Dodos deck, 21, male",
+  "Alian Dwine, 22, male",
+  "Patrick wyne, 33, male",
+  "Patrick wyne, 10, male",
+  "Patrick wyne, 40, male"
+];
+
+const result = organizePeopleData(formattedArray);
+console.log(result);
