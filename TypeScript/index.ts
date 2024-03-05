@@ -203,3 +203,5 @@ form.addEventListener('submit', (e: Event) => {
 })
 console.log(form.method); // post 
 
+
+
