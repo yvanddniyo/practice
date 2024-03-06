@@ -23,7 +23,7 @@ const arraysPrime = (arr) => {
 	return result;
 }
 const arr = [1,2,3,4,5,7,8,9]
-console.log(arraysPrime(arrray));
+// console.log(arraysPrime(arrray));
 
 
 // 2.   => Palindrome
@@ -56,19 +56,34 @@ const reverseInplaceArray = (arr2) => {
 
 }
 
+
 // 5. FIVE CHALLENGES
 
-const formatArrays = (arr) => {
-  const objectOrganized = {
-    male: [],
-    female: [] 
+const makeObjects = (arrs) =>{
+  const objectContainer =  {
+   M:[],
+   F: []
   }
-  const destructingArray = arr.forEach( person => {
-    
-  })
-
+  for(let i = 0; i < arrs.length; i++) {
+    const removeSpaces = arrs[i].split(',').map(itm => itm.trim())
+    const [fullName, ages, gender] = removeSpaces;
+    const [f, l] = fullName.split(' ')
+   if(gender === 'male') {
+    objectContainer.M.push({[f]: {secondName: l, ages: parseInt(ages)}})
+   }
+   else if (gender === 'female'){
+    objectContainer.F.push({[f]: {secondName: l, ages: parseInt(ages)}})
+   }
+  }
+  return objectContainer
 }
-// [“Patrick wyne, 30, male”, “lil wyne, 32, male”,“Eric mimi, 21, female”,“Dodos deck, 21,male”,“Alian Dwine, 22, male”,“Patrick wyne, 33, male”,“Patrick wyne, 10,male0”,“Patrick wyne, 40,male”]
+
+const entr = 
+["Patrick wyne, 30, male", "lil wyne, 32, male","Eric mimi, 21, female","Dodos deck, 21,male","Alian Dwine, 22, male","Patrick wyne, 33, male","Patrick wyne, 10,male0","Patrick wyne, 40,male"]
+const result = makeObjects(entr);
+console.log(JSON.stringify(result, null, 2))
+
+
 
 // {
 //   females: [Eric: {'second-name':mimi, age:21}], 
@@ -77,4 +92,5 @@ const formatArrays = (arr) => {
 
 
 // solution
+
 
