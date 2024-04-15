@@ -5,9 +5,9 @@
 //             console.log(i);
 //         }
 //     }
-  
+
 //   }
-  
+
 //   const arr = [1,2,3,4,5]
 
 // const getFabNum = (n) => {
@@ -26,12 +26,10 @@ function fib(n) {
 	if (n == 0)
 		return [0n, 1n];
 	else {
-        const [a, b] = fib(Math.floor(n / 2));
-        // console.log([a,b]);
+		const [a, b] = fib(Math.floor(n / 2));
 		const c = a * (b * 2n - a);
-        console.log(c);
+		console.log(c);
 		const d = a * a + b * b;
-        // console.log(d);
 
 		if (n % 2 == 0)
 			return [c, d];
@@ -39,5 +37,20 @@ function fib(n) {
 			return [d, c + d];
 	}
 }
-console.log(fib(9))
 
+
+const divideObj = (str) => {
+	let obj = {};
+	for (let i = 0; i < str.length; i++) {
+		if (obj.hasOwnProperty(str[i])) {
+			obj[str[i]] += 1
+		}
+		else {
+			obj[str[i]] = 1
+		}
+	}
+	return obj
+}
+
+const result = divideObj("abbbbc")
+console.log(result);
