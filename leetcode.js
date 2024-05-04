@@ -1,14 +1,14 @@
-// const sumTwo =(arr, target) => {
-//     for (let i = 0; i < arr.length; i++){
-//         for(let j = 1; j < arr.length; j++){
+const sumTwo = (arr, target) => {
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 1; j < arr.length; j++) {
 
-//             console.log(i);
-//         }
-//     }
+			console.log(i);
+		}
+	}
 
-//   }
+}
 
-//   const arr = [1,2,3,4,5]
+const arr = [1, 2, 3, 4, 5]
 
 // const getFabNum = (n) => {
 //     let ans= []
