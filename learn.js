@@ -46,5 +46,5 @@ function removeFirstAndLastCharacters(inputString) {
 // Example usage:
 const originalString = "HelloWorld";
 const modifiedString = removeFirstAndLastCharacters(originalString);
-console.log(modifiedString); // Output: elloWorl
+console.log(modifiedString); // Output: elloWorl   this good output...
 

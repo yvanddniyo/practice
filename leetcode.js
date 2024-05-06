@@ -53,4 +53,4 @@ const divideObj = (str) => {
 }
 
 const result = divideObj("abbbbc")
-console.log(result);
+console.log(result);  // this function return new object
