@@ -31,20 +31,26 @@ const originalNumber = 10;
 const newNumber = addFive(originalNumber);
 console.log(newNumber);
 
-function removeFirstAndLastCharacters(inputString) {
-  // Check if the string has at least two characters
+const  removeFirstAndLastCharacters = (inputString) => {
   if (inputString.length >= 2) {
-    // Use substring to remove the first and last characters
     const result = inputString.substring(1, inputString.length - 1);
     return result;
   } else {
-    // If the string has less than two characters, return an error message or handle it accordingly
     return "Error: String has less than two characters";
   }
 }
 
-// Example usage:
 const originalString = "HelloWorld";
 const modifiedString = removeFirstAndLastCharacters(originalString);
-console.log(modifiedString); // Output: elloWorl   this good output...
+console.log(modifiedString); 
 
+
+const removeFcharacter = (str) =>{ 
+  if (str.length <= 2) {
+    return "string must more than two character."
+  }
+return str.slice(1, -1)
+ 
+}
+
+console.log(removeFcharacter("yvan"))
