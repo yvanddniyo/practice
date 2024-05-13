@@ -67,3 +67,12 @@ return rst
 }
 
 console.log(retuernPureString("ivan!you"))
+
+const filterFunction = (str) => {
+ let arr = []
+ for (let i = 0; i < str.length; i++) {
+  arr.unshift(str[i])
+ }
+ return arr.join('')
+}
+console.log(filterFunction("hello"))
