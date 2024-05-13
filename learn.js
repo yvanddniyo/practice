@@ -56,9 +56,14 @@ return str.slice(1, -1)
 console.log(removeFcharacter("yvan"))
 
 const retuernPureString = (str) => {
- if (str.indexOf('!') !== -1 ) {
-  return str.slice(0, str.indexOf('!'))
- }
+// return str.replace('!', ) 
+let rst = '';
+for (let i = 0; i < str.length; i++) {
+  if (str[i] !== '!') {
+    rst+=str[i]
+  }
+}
+return rst
 }
 
 console.log(retuernPureString("ivan!you"))
