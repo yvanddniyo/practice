@@ -116,3 +116,13 @@ const getMessage = (name) => {
   const goodFormat = name.chatAt(0).toUpperCase() + name.slice(1).toLowerCase()
   return "Hello " + goodFormat;
 }
+
+const numberlingSystem = (arr) => {
+  const newRst = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newRst.push(`${i + 0}:${ arr[i]}`)
+  }
+  return newRst
+}
+console.log(numberlingSystem(["a", "b", "c", "d"]))
