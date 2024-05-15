@@ -20,3 +20,20 @@ const generatorIterator = getEmployee()
 console.log(result.value)
 generatorIterator.next().value
 generatorIterator.next().value
+
+// Transpiling code
+
+class Students {
+    constructor(name, major) {
+        this.name =  name,
+        this.major = major
+    }
+    displayInfo() {
+        console.log(`${this.name} is a ${this.major} student`)
+    }
+}
+
+const richards = new Students("Richart", "Music")
+const james = new Students ("James", "Electrical student")
+
+// babel ES6  -d ES5: build
