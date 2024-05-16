@@ -42,4 +42,4 @@ const checkFruit = (string)  => {
 
 checkFruit(string)
 console.log(string)
-console.log(originalObject)
+// console.log(originalObject)
