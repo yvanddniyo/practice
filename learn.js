@@ -1,10 +1,12 @@
+// how to make return a string without using methods
+
 const myFilter = (str) => {
-  // let result = "";
-  // for (let i = 0; i < str.length; i++) {
-  //   if (str[i] !== "!") {
-  //     result += str[i];
-  //   }
-  // }
+  let resultStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== "!") {
+      resultStr += str[i];
+    }
+  }
   // return result;
 
   const result = str.split("");
