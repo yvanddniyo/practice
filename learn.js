@@ -1,24 +1,17 @@
 // how to make return a string without using methods
 
-const myFilter = (str) => {
-  let resultStr = "";
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== "!") {
-      resultStr += str[i];
-    }
-  }
+  // console.log(myFilter("Yvan!!is quite amazing!"))÷
   // return result;
 
-  const result = str.split("");
-  const remove = result.filter((char) => {
-    return char !== "!";
-  });
+  // const result = str.split("");
+  // const remove = result.filter((char) => {
+  //   return char !== "!";
+  // });
 
-  return remove.join("");
-  console.log(remove);
-};
+  // return remove.join("");
+  // console.log(remove);
 
-console.log(myFilter("hello ! yvan ! i hope !"));
+
 
 function addFive(inputNumber) {
   if (typeof inputNumber === "number") {
@@ -78,3 +71,16 @@ const filterFunction = (str) => {
  return arr.join('')
 }
 console.log(filterFunction("hello"))
+
+
+const myFilter = (str) => {
+  let resultStr = "";
+  for(let i = 0; i < str.length; i++) {
+    if (str[i] !== "!"){
+      resultStr += str[i]
+    }
+  }
+  return resultStr
+  }
+const asr = myFilter("hello ! yvan ! i hope !");
+console.log(asr)
