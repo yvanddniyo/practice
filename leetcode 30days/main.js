@@ -78,5 +78,3 @@ const asr = create("h")
 const helloWorld = (...args) => {
     return "HelloWORLD"
 }
-
-console.log(helloWorld(122112121))
