@@ -8,7 +8,6 @@ function f (a,b) {
 const fa = function(a, b){
 return a + b;
 }
-
 //Invoked Function Expression (IFE)
 const ife = ((a, b) =>{
  return a + b ;
@@ -18,15 +17,12 @@ console.log(ife)
 /**
  * Powerfull feature in js can  be able to create a function within another function.
  */
-
  const  add = () => { 
  function addCall(a, b) {
      return a + b;
  }
  return addCall
  }
-
-
  /**
   * Hoisting is where the function called before being used.
   */
@@ -38,7 +34,6 @@ console.log(ife)
   }// this is only works for the "Function", not allow function.
   const addCall = addHoisting()
   console.log(addCall(3, 3));
-
 /**
  * write function that alway return "HELLO WORLD"
 */
@@ -47,7 +42,6 @@ const createHelloworld = function() { // create the anonymous function.
         return "Hello World"
     }
 }
-
 /**
  * What is the closure is the combination of the function and it's environments.
  */
