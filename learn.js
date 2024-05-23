@@ -84,4 +84,18 @@ const myFilter = (str) => {
   }
 const asr = myFilter("hello ! yvan ! i hope !");
 
+// return the largest numnber 
 
+const getlargestNumber = (nums) => {
+  let largestNums = nums[0]// 3<3=f, 3<4=t, 3<5=t 
+  for (let i = 0; i < nums.length; i++) {
+    if (largestNums < nums[i]) {
+     largestNums =  nums[i]
+    }
+  }
+  return largestNums
+// return Math.min(...nums) this is the smallest the answer of this question
+}
+
+const resultNumber = getlargestNumber([3,12 ,'',4,500.0,5])
+console.log(resultNumber)
