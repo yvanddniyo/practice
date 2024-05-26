@@ -99,3 +99,6 @@ const getlargestNumber = (nums) => {
 
 const resultNumber = getlargestNumber([3,12 ,'',4,500.0,5])
 console.log(resultNumber)
+
+const date = new Date()
+console.log(date.toDateString()) ///
