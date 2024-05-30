@@ -2,7 +2,7 @@
  * Here is the some change and concept which needed in function 
  * 
 */
-function f (a,b) {
+function f (a, b) {
  return a + b;
 }
 const fa = function(a, b){
@@ -76,5 +76,102 @@ const create = () => {
 const asr = create("h") 
 
 const helloWorld = (...args) => {
-    return "HelloWORLD"
+    return "Hello World"
 }
+
+/**
+ * 
+ * Given an integer n return a counter function. This Counter function initially return n and then return 1 more than the previous value every subsquent time  it is called(n, n+1, n+2)
+ */
+ // Functional programming 
+
+const createCounter =  (n) => {
+  return function() {
+    return n++
+  }
+}
+ 
+// using the class to implement this counter OOP
+class Counter {
+    constructor(n) {
+        this.n = n
+    }
+    increment() {
+        return this.n++
+    }
+}
+const counter =  new Counter(10)
+
+/**
+ * 
+ Write a function createCounter. it should accept an initial integer init. It should return a object  withe three functions.
+ The three functions are:
+ - increment() increases the current value by 1 and then return it.
+ - descrement() reduce the current value by 1 and the return it.
+ - reset() set the current value to init and then return it.
+ */
+
+ const createCounterII = (n) => {
+   let counter;
+    return function() {
+        const countReset = n
+        const counterIncrement = ++n;
+        const counterDecrement =  n -= 2;
+
+        counter = [ answers = {
+            increment: counterIncrement, 
+            reset: countReset, 
+            decrement: counterDecrement}]
+        return counter 
+    }
+ }
+ // Another method to resolve this 
+ var createCounter2 = function(init) {
+    let count = init;
+
+    function increment() {
+      return ++count;
+   }
+
+   function reset() {
+       count = init
+      return count
+   }
+   
+   function decrement() {
+      return --count;
+   }
+
+      return {
+           increment: increment, 
+           reset: reset, 
+           decrement: decrement
+       }
+   }
+
+   //OOP of this function
+
+   class Counter2 {
+    constructor(init) {
+        this.init =  init
+        this.count = init
+    }
+    increment() {
+        return ++this.count
+    }
+    reset() {
+        return this.count
+    }
+    decrement() {
+        return --this.count
+    }
+    // return = {increment, reset, decrement}
+   }
+const counter2 = new Counter2(20)
+
+
+
+ const counters = createCounterII(10)
+ console.log(counter2.increment()) 
+ console.log(counter2.reset()) 
+ console.log(counter2.decrement()) 
