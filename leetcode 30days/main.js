@@ -175,3 +175,25 @@ const counter2 = new Counter2(20)
  console.log(counter2.increment()) 
  console.log(counter2.reset()) 
  console.log(counter2.decrement()) 
+
+ const expect = (val) => {
+    
+    toBe:(expected) => {
+        if (val ===  expected) {
+            return true;
+        }
+        else {
+            throw new Error("Not Equal")
+        }
+    }
+    notToBe: (expected) => {
+        if (val !== expected) {
+            return true
+        }
+        else {
+            throw new Error("Equal")
+        }
+    }
+ }
+
+ console.log(expect(5).toBe(5))
