@@ -196,4 +196,4 @@ const counter2 = new Counter2(20)
     }
  }
 
- console.log(expect(5).toBe(5))
+ console.log(() => expect(5).toBe(5))
