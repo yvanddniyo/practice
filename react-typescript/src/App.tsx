@@ -1,9 +1,10 @@
+import Message from "./components/Messages"
 
 const  App = () => {
   return (
    <div>
-     <h1>Hello mom</h1>
-   </div>
+    <Message />
+  </div>
   )
 }
 
