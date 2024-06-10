@@ -102,3 +102,17 @@ console.log(resultNumber)
 
 const date = new Date()
 console.log(date.toDateString()) // display the current time depends on the date 
+
+//taskforce
+
+const tasks = (arr, target) => {
+  for(let i = 0; i < arr.length; i++) {
+    let ttl = 0;
+    if(ttl += arr[i] === target){
+      return true;
+    }
+  }
+  return false
+  // console.log(ttl)
+}
+console.log(tasks([3,4,5,6,1,5], 12))
