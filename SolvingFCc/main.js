@@ -50,3 +50,40 @@ const twoSum = (nums, target) => {
 
 const result = twoSum(nums, target)
 console.log("answers...>", result)
+
+// function look the duplicate value in the array and return true if yes or false if no
+const DupNums = [2,3,4]
+const lookDuplicate = (DupNums) => {
+  for (let i = 0; i < DupNums.length; i++) {
+    for (let j = 0; j < DupNums.length; j++) {
+      if(i !== j && DupNums[i] === DupNums[j]) {
+        return true;
+      }
+
+    }
+  }
+  return false;
+}
+
+console.log("Duplicate",lookDuplicate(DupNums))
+
+// Function handle Duplication using object to optimize time complexity O(n)
+
+const handleDuplicateObj  = (DupNums) => {
+  const existingValue = {};
+  console.log("esi", existingValue)
+
+  for( let i = 0; i < DupNums.length; i++) {
+    if (!existingValue[DupNums[i]]) {
+      existingValue[DupNums[i]] = 1
+    }
+    else{
+      return true
+    }
+  }
+  console.log("es", existingValue)
+
+  return false;
+}
+
+console.log("HashMap",handleDuplicateObj(DupNums))
