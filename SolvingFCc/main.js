@@ -1,3 +1,8 @@
+const DupNums = [2,3,4]
+const arr = [1, 202, 2, 3, 50, 10, 20, 30]
+const votes = ["paul", "vuga", "paul","paul", "paul","paul", "vuga", "yvan", "musoni", "yvan", "musoni","yvan", "musoni"]
+
+
 //Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
 
 //Note: You can return the array with its elements in any order.
@@ -52,7 +57,6 @@ const result = twoSum(nums, target)
 console.log("answers...>", result)
 
 // function look the duplicate value in the array and return true if yes or false if no
-const DupNums = [2,3,4]
 const lookDuplicate = (DupNums) => {
   for (let i = 0; i < DupNums.length; i++) {
     for (let j = 0; j < DupNums.length; j++) {
@@ -87,3 +91,64 @@ const handleDuplicateObj  = (DupNums) => {
 }
 
 console.log("HashMap",handleDuplicateObj(DupNums))
+
+// voting machine or algorithm
+
+const votingAlg = (votes) => {
+  const voteObj = {};
+  for( let i = 0; i < votes.length; i++) {
+    if(voteObj[votes[i]]) {
+      voteObj[votes[i]]++
+    }
+    else {
+      voteObj[votes[i]] = 1
+    }
+  }
+ return voteObj
+}
+
+console.log("total Votes", votingAlg(votes))
+
+// using recursive to determine the factorial 
+
+const findFactorial = (number) => {
+    if (number === 1) {
+      return 1
+    }
+    else{
+      return number * findFactorial(number - 1)
+    }
+}
+// factorial of 5 = 5 * 4 *3 * 2 * 1
+console.log("Find Factorial of n", findFactorial(10))
+
+// Binary seatch algorithms for searching value within array using O(n) 
+
+const binarySearch = (arr, val)  => {
+  const sortedArr = arr.sort((a, b) => a - b)
+  console.log("sortedArr" , sortedArr)
+  let low = 0;
+  let high = sortedArr.length - 1;
+  console.log("high", high)
+  let mid;
+while (high >= low) {
+  // mid = low + Math.floor(high - low) / 2
+  mid = Math.floor((low + high) / 2)
+  console.log("mid", mid)
+
+  if(sortedArr[mid] === val) {
+    return mid;
+  }
+
+  if(sortedArr[mid] > val) {
+    high = mid -1;
+  }
+   else{
+     low = mid + 1;
+   }
+  
+}
+ return "Index related value not found...";
+}
+
+console.log("binarySearch", binarySearch(arr, 1))
