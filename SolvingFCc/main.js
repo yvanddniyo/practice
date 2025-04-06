@@ -125,12 +125,15 @@ console.log("Find Factorial of n", findFactorial(10))
 // Binary seatch algorithms for searching value within array using O(n) 
 
 const binarySearch = (arr, val)  => {
+  // sort number to make sure the array is sorted...
+
   const sortedArr = arr.sort((a, b) => a - b)
   console.log("sortedArr" , sortedArr)
   let low = 0;
   let high = sortedArr.length - 1;
   console.log("high", high)
   let mid;
+  // looping
 while (high >= low) {
   // mid = low + Math.floor(high - low) / 2
   mid = Math.floor((low + high) / 2)
