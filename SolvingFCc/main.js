@@ -205,3 +205,16 @@ function quickSort(arr, low, high)
         quickSort(arr, pi + 1, high);
     }
 }
+
+function whatIsInAName(collection, source) {
+  let arrayOfValues = [];
+  const getValues = (obj) => {
+    for(const [key, value] of Object.entries(obj)) {
+      return value;
+    }
+  }
+
+}
+
+const res = whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+console.log("res", res);
