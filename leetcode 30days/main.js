@@ -197,3 +197,59 @@ const counter2 = new Counter2(20)
  }
 
  console.log(() => expect(5).toBe(5))
+
+
+ //This problem teaches us how to build a prefix sum array, which is a valuable tool that, in the future, you can use to solve more complex problems efficiently
+ const runningSumArr = [1, 2, 3, 4, 5]
+ const runningSum = (runningSumArr) => {
+    let result = [runningSumArr[0]];
+    for (let i = 1; i < runningSumArr.length; i++) {
+        result.push((runningSumArr[i] + result[i - 1]))
+    }
+    console.log("solution", result);
+    return result;
+ }
+ runningSum(runningSumArr)
+ const accounts = [[1,5],[7,3],[3,5]]
+
+// searching wealth pesron on the leetcode question...
+
+ function maximumWealth(accounts) {
+    let mostWeilthPerson = [];
+        const mappedAccount = (account) => {
+        const accountVal = account.reduce((acc, sum) => (
+            acc + sum
+        ), 0)
+        mostWeilthPerson.push(accountVal)
+    
+    }
+    const calculatingWealth =  accounts.map(mappedAccount)
+    console.log("title", Math.max(...mostWeilthPerson));
+    return Math.max(...mostWeilthPerson)
+ };
+
+ maximumWealth(accounts)
+ let n = 3
+ function fizzBuzz(n) {
+    let answerFizzBuzz = [];
+    for (let i = 1; i <= n; i++) {
+        console.log("nn", i)
+        if (i % 3 === 0 && i % 5 === 0) {
+            answerFizzBuzz.push("FizzBuzz");
+        }
+        else if (i % 3 === 0) {
+             answerFizzBuzz.push("FIzz");
+        }
+        else if (i % 5 === 0 ) {
+             answerFizzBuzz.push("Buzz");
+        }
+        else {
+            answerFizzBuzz.push(i.toString());
+        }
+
+    }
+    console.log("....", answerFizzBuzz)
+    return answerFizzBuzz;
+};
+
+fizzBuzz(n)
