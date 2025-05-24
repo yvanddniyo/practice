@@ -227,7 +227,7 @@ const counter2 = new Counter2(20)
     console.log("title", Math.max(...mostWeilthPerson));
     return Math.max(...mostWeilthPerson)
  };
-
+// FizzBuzz problem interview 
  maximumWealth(accounts)
  let n = 3
  function fizzBuzz(n) {
