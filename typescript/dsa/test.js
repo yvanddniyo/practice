@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.needleNum = exports.breaksList = exports.haystackList = void 0;
+var linear_search_1 = require("../linear_search");
+exports.haystackList = [1, 2, 3, 5, 6, 34, 54, 878, 34, 23];
+exports.breaksList = [false, true, false, true, false, false, false, false];
+exports.needleNum = 232323;
+console.log("linear", (0, linear_search_1.default)(exports.haystackList, 1));
+console.log("binary_search", (0, linear_search_1.binary_search)(exports.haystackList, exports.needleNum));
+console.log("crystal_ball", (0, linear_search_1.crystal_ball)(exports.breaksList));
