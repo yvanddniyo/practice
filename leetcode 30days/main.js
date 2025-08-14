@@ -254,6 +254,30 @@ const counter2 = new Counter2(20)
 
 fizzBuzz(n)
 
+
+// Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+// Each letter in magazine can only be used once in ransomNote.
+
+function canConstruct(ransomNote, magazine) {
+ for ( let i = 0; i < ransomNote.length; i++){
+    const r = ransomNote.charAt(i);
+    const matchingIndex = magazine.indexOf(r);
+    console.log("matchingINDEX", matchingIndex);
+    
+    if (matchingIndex === -1) {
+        return false;
+    }
+
+    magazine = magazine.substring(0, matchingIndex) + magazine.substring(matchingIndex + 1);
+ }
+ return true
+};
+
+console.log("lllll", canConstruct("aa", "ab"))
+
+
+
 // Given an integer num, return the number of steps to reduce it to zero.
 // In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
 

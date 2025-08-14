@@ -2,24 +2,24 @@
 
 console.log("Hello, world")
 
-function greeting  (person: string, date: Date) {
-    console.log(`Hello, ${person}, today is ${date.toDateString()}!`)
-}
+// function greeting  (person: string, date: Date) {
+//     console.log(`Hello, ${person}, today is ${date.toDateString()}!`)
+// }
 
-greeting("Yvan", new Date())
+// greeting("Yvan", new Date())
 
 // primitive type: string, number and booleans
 // array in typescript: string[] or Array<number> or Array<string>
 // T<U> this another type of array but we will cover it when we go to the generics.
 
-let obj: any = { x : 0 }
-obj.foo()
-obj()
-obj.bar = 100
+// let obj: any = { x : 0 }
+// obj.foo()
+// obj()
+// obj.bar = 100
 
-function getFavNumber (): number {
-    return 42;
-}
+// function getFavNumber (): number {
+//     return 42;
+// }
 
 function getPoint (pnt: { x: number, y: number}) {
     console.log("value of the x point is that ", pnt.x)
@@ -68,3 +68,13 @@ interface Lion extends Animal {
     carnovals: string[]
 }
 
+class Point {}
+const pt = new Point()
+console.log("pt", pt)
+
+class GoodMorning {
+    name: string;
+    constructor(){
+        this.name = "yvan";
+    }
+}
