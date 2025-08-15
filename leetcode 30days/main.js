@@ -277,6 +277,19 @@ function canConstruct(ransomNote, magazine) {
 console.log("lllll", canConstruct("aa", "ab"))
 
 
+// Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+
+// The returned array should be created such that returnedArray[i] = fn(arr[i], i).
+
+// Please solve it without the built-in Array.map method.
+
+// function map(arr: number[], fn: (n: number, i: number) => number): number[] {
+    
+// };
+
+
+
+
 
 // Given an integer num, return the number of steps to reduce it to zero.
 // In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
