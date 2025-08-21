@@ -9,7 +9,7 @@ function mapFn(arr: number[], fn: (n: number, i: number) => number): number[] {
   
   // we can also implement going like this
   for (let i = 0; i < arr.length; i++) {
-    arr[i] = fn(arr[i], i )
+    arr[i] = fn(arr[i], i );
   }
   return ar;
 };
