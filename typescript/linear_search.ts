@@ -30,6 +30,7 @@ export const binary_search = (haystack: number[], needle: number): boolean => {
   return false;
 }
 
+// crystall ball problem most asked in ld
 export const crystal_ball = (breaks: boolean[]):number => {
   const jumpBreak = Math.floor(Math.sqrt(breaks.length));
 
