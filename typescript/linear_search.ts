@@ -5,7 +5,7 @@ export default function linear_search (haystack: number[], needle: number):boole
     }
   }
   return false;
-}
+} // this code has time complexity of O(n
 
 export const binary_search = (haystack: number[], needle: number): boolean => {
   let lower = 0;
