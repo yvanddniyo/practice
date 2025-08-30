@@ -52,3 +52,27 @@ export const crystal_ball = (breaks: boolean[]):number => {
 
   return -1;
 }
+
+
+//Finding the duplicate return yes or no if you find it in an array.
+// This question took Olog(n) as the time complexity.
+
+const DuplicateValue = (nums: number[]) => {
+  const sortNums = nums.sort((a, b) => a - b);
+  for (let i = 0; i < sortNums.length; i++) {
+    if (nums[i] === nums[i + 1]){
+      return true;
+    }
+  }
+  return false;
+}
+
+// here is the approach of the O(n)
+
+const duplicate = (nums: number[])=> {
+ const newSet = new Set(nums)
+ return newSet.size !== nums.length;
+}
+
+const Dv = [2,3, 4, 3,7];
+DuplicateValue(Dv);
