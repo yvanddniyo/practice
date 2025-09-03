@@ -76,3 +76,44 @@ const duplicate = (nums: number[])=> {
 
 const Dv = [2,3, 4, 3,7];
 DuplicateValue(Dv);
+
+//The compose function takes an array of functions and returns a new function that applies each function in the array, from right to left, to the input value. This is useful when we want to apply a series of transformations to some input data.
+
+// syntax
+type F = (x: number) => number;
+
+const  compose = (func: F[]) => {
+   if (func.length === 0){
+    return (x: number) => x
+   }
+   return func.reduceRight((currFn, prevFn) => (x) => prevFn(currFn(x)))
+} 
+
+//Allow One Function Call 
+//Given a function fn, return a new function that is identical to the original function except that it ensures fn is called at most once.
+type JSONValue = null | boolean | number | string | JSONValue[] | { [key: string]: JSONValue };
+type OnceFn = (...args: JSONValue[]) => JSONValue | undefined
+
+const once = (fn:Function):OnceFn => {
+  let hasBeenCalled = false;
+  let result:number; 
+
+  return (...args) =>  {
+    if (!hasBeenCalled) {
+      result = fn(...args);
+      hasBeenCalled = true;
+      return result;
+    }
+    return undefined; // this look redudant but it makes less time complexity
+  }
+}
+
+//ONELINE ANSWER
+const onceOnline = (fn:Function) => {
+  let isExecuted = false;
+  return (...args) => (isExecuted ? undefined : ((isExecuted = true), fn(...args)));
+};
+
+
+// call
+once((a:number, b:number, c:number) => a + b + c)

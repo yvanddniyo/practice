@@ -1,0 +1,15 @@
+{
+  "default_branch": "my-react-ts",
+  "branches": [
+    "main",
+    "my-react-ts"
+  ],
+  "parent": {
+    "main": "my-react-ts",
+    "my-react-ts": null
+  },
+  "order": [
+    "my-react-ts",
+    "main"
+  ]
+}
