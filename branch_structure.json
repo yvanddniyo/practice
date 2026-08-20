@@ -2,14 +2,17 @@
   "default_branch": "my-react-ts",
   "branches": [
     "main",
-    "my-react-ts"
+    "my-react-ts",
+    "origin"
   ],
   "parent": {
     "main": "my-react-ts",
-    "my-react-ts": null
+    "my-react-ts": null,
+    "origin": "my-react-ts"
   },
   "order": [
     "my-react-ts",
-    "main"
+    "main",
+    "origin"
   ]
 }
